@@ -1,4 +1,6 @@
-
+import java.util.Random;
+import java.util.Scanner;
+import java.io.File;
 /**
  * Write a description of class Main here.
  *
@@ -7,27 +9,52 @@
  */
 public class Main
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
-    /**
-     * Constructor for objects of class Main
-     */
-    public Main()
-    {
-        // initialise instance variables
-        x = 0;
+    
+    public static void main (String[] args){
+        Random myRandom;
+        myRandom= new Random();
+        
+        Scanner sc = new Scanner(System.in);
+        int numerointentos=1;
+        int ultimoinput=0;
+        int mynumber=myRandom.nextInt(10) + 1;      
+        System.out.println("El numero random es:" + mynumber); 
+           
+        int i = sc.nextInt();
+        ultimoinput=i;
+        
+        System.out.println("El input value es:" + i);
+        
+        while (i != mynumber) {
+             System.out.println("Numero de intentos: "+numerointentos);
+            
+                  
+             if (i > mynumber) {
+                 System.out.println("too large");
+                }
+                 else 
+                 {
+                    System.out.println("too small");
+                     
+                    }
+                    
+             i = sc.nextInt();
+             System.out.println("El input value en el while es:" + i);
+             
+             if (i != ultimoinput) {   
+             numerointentos++;
+             
+             ultimoinput=i;
+            }
+                    
+                    
+                    
+                }
+        
+          
+          
+        System.out.println("correct guess");
+  
+            }
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
-    }
-}
